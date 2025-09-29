@@ -14,7 +14,7 @@ app.get('/api/notes', (request, response) => {
 app.use(express.json())
 
 const unknownEndpoint = (request, response)=>{
-    return response.status(404).send({error: 'unkown endpoint'})
+    return response.status(400).send({error: 'unkown endpoint'})
 }
 const errorHandler = (error, request, response, next) => {
   console.error(error.message)
